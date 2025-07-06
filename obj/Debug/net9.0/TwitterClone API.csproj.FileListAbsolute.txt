@@ -172,3 +172,9 @@ E:\projects\TwitterClone API\TwitterClone API\obj\Debug\net9.0\refint\TwitterClo
 E:\projects\TwitterClone API\TwitterClone API\obj\Debug\net9.0\TwitterClone API.pdb
 E:\projects\TwitterClone API\TwitterClone API\obj\Debug\net9.0\TwitterClone API.genruntimeconfig.cache
 E:\projects\TwitterClone API\TwitterClone API\obj\Debug\net9.0\ref\TwitterClone API.dll
+E:\projects\TwitterClone API\TwitterClone API\obj\Debug\net9.0\TwitterClone API.sourcelink.json
+E:\projects\TwitterClone API\TwitterClone API\bin\Debug\net9.0\Microsoft.Extensions.PlatformAbstractions.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Debug\net9.0\Swashbuckle.SwaggerUi.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
