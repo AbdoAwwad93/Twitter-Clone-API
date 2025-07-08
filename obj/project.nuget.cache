@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "MDNHFet7ZA0=",
+  "dgSpecHash": "U2b+vNUbIkA=",
   "success": true,
   "projectFilePath": "E:\\projects\\TwitterClone API\\TwitterClone API\\TwitterClone API.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Abdoa\\.nuget\\packages\\automapper\\15.0.0\\automapper.15.0.0.nupkg.sha512",
     "C:\\Users\\Abdoa\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Abdoa\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
     "C:\\Users\\Abdoa\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",

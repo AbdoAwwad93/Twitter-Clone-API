@@ -178,3 +178,4 @@ E:\projects\TwitterClone API\TwitterClone API\bin\Debug\net9.0\Swashbuckle.Swagg
 E:\projects\TwitterClone API\TwitterClone API\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
 E:\projects\TwitterClone API\TwitterClone API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 E:\projects\TwitterClone API\TwitterClone API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Debug\net9.0\AutoMapper.dll

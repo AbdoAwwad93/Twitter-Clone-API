@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-namespace TwitterClone_API.Models
+namespace TwitterClone_API.Models.AppModels
 {
     public class Tweet
     {

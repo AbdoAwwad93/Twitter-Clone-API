@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TwitterClone API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b427fdd85075900f19583c58a6b724f4d883c163")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e74e1a5d310fe780e070650dc1728f131c2e9a1e")]
 [assembly: System.Reflection.AssemblyProductAttribute("TwitterClone API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TwitterClone API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

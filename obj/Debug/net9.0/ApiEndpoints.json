@@ -32,6 +32,64 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "TwitterClone_API.Controllers.ProfileController",
+    "Method": "DeleteMyProfile",
+    "RelativePath": "api/Profile/DeleteMyProfile",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userData",
+        "Type": "TwitterClone_API.Models.DTOs.UserLoginDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TwitterClone_API.Controllers.ProfileController",
+    "Method": "EditMyProfile",
+    "RelativePath": "api/Profile/EditMyProfile",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "profileDTO",
+        "Type": "TwitterClone_API.Models.DTOs.ProfileDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TwitterClone_API.Controllers.ProfileController",
+    "Method": "GetProfile",
+    "RelativePath": "api/Profile/MyProfile",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TwitterClone_API.Controllers.ProfileController",
+    "Method": "SearchAboutProfile",
+    "RelativePath": "api/Profile/Search/Profile/{useranme}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "useranme",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "TwitterClone_API.Controllers.TestController",
     "Method": "display",
     "RelativePath": "api/Test",

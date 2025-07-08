@@ -6,7 +6,10 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 using TwitterClone_API.DataAccess;
 using TwitterClone_API.DataAccess.Repo;
-using TwitterClone_API.Models;
+using AutoMapper;
+using Microsoft.Extensions.DependencyInjection;
+using TwitterClone_API.Models.Mapping;
+using TwitterClone_API.Models.AppModels;
 
 namespace TwitterClone_API
 {
@@ -98,6 +101,9 @@ namespace TwitterClone_API
                 });
             });
 
+            builder.Services.AddAutoMapper(cfg => cfg.AddProfile<MappingProfile>());
+
+
 
             var app = builder.Build();
 
@@ -109,7 +115,7 @@ namespace TwitterClone_API
                 app.UseSwaggerUI();
 
             }
-            app.UseCors("MyPolicy");
+            //app.UseCors("MyPolicy");
             app.UseAuthentication();
             app.UseAuthorization();
 

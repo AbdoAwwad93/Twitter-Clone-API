@@ -2,9 +2,9 @@
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.InteropServices;
 
-namespace TwitterClone_API.Models
+namespace TwitterClone_API.Models.AppModels
 {
-    public class AppUser:IdentityUser
+    public class AppUser : IdentityUser
     {
         [Required]
         public string FirstName { get; set; }

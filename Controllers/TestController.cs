@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TwitterClone_API.DataAccess.Repo;
-using TwitterClone_API.Models;
+using TwitterClone_API.Models.AppModels;
 
 namespace TwitterClone_API.Controllers
 {

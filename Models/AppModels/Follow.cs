@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TwitterClone_API.Models
+namespace TwitterClone_API.Models.AppModels
 {
     public class Follow
     {

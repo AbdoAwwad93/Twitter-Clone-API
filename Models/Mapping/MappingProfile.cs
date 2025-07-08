@@ -1,0 +1,20 @@
+﻿using AutoMapper;
+using TwitterClone_API.Models.AppModels;
+using TwitterClone_API.Models.DTOs;
+
+namespace TwitterClone_API.Models.Mapping
+{
+    public class MappingProfile : Profile
+    {
+        public MappingProfile()
+        {
+            CreateMap<AppUser, ProfileDTO>().ReverseMap();
+            CreateMap<AppUser, UserRegisterDTO>().ReverseMap();
+            CreateMap<Tweet, TweetDTO>().ForMember(des => des.LikesCount,
+                option => option.MapFrom(src => src.Likes!=null? src.Likes.Count: 0));
+            CreateMap<Tweet, TweetDTO>().ForMember(des => des.CommentsCount,
+                option => option.MapFrom(src => src.Comments!=null ? src.Comments.Count : 0));
+
+        }
+    }
+}

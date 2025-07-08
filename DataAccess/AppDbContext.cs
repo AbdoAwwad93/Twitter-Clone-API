@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using TwitterClone_API.Models;
+using TwitterClone_API.Models.AppModels;
 
 namespace TwitterClone_API.DataAccess
 {
