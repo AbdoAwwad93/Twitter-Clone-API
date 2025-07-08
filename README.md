@@ -33,27 +33,11 @@ A RESTful API for a Twitter-like social platform, built with ASP.NET Core 9, Ent
 
 ## Technologies Used
 
-- **.NET 9 (ASP.NET Core 9)**
+- **.NET 9 Web API (ASP.NET Core 9)**
 - **Entity Framework Core 9** (with SQL Server and Proxies)
 - **AutoMapper** (object mapping)
 - **Microsoft.AspNetCore.Identity** (user management)
 - **JWT Bearer Authentication**
-- **Swagger / Swashbuckle** (API documentation)
-- **Microsoft.AspNetCore.OpenApi**
-- **SwaggerUi** (interactive API docs)
-
-NuGet packages (from `.csproj`):
-
-- AutoMapper
-- Microsoft.AspNetCore.Authentication.JwtBearer
-- Microsoft.AspNetCore.Identity.EntityFrameworkCore
-- Microsoft.AspNetCore.OpenApi
-- Microsoft.EntityFrameworkCore.Proxies
-- Microsoft.EntityFrameworkCore.SqlServer
-- Microsoft.EntityFrameworkCore.Tools
-- SwaggerUi
-- Swashbuckle.AspNetCore
-
 ---
 
 ## Getting Started
