@@ -20,9 +20,16 @@ namespace TwitterClone_API
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
-            builder.Services.AddControllers();
+            builder.Services.AddControllers().ConfigureApiBehaviorOptions(options =>
+            {
+                options.SuppressModelStateInvalidFilter = true;
+            });
             builder.Services.AddOpenApi();
-            builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Constr")));
+            builder.Services.AddDbContext<AppDbContext>(options =>
+            {
+                options.UseSqlServer(builder.Configuration.GetConnectionString("Constr"));
+                options.UseLazyLoadingProxies();
+            });
             builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
             {
@@ -34,10 +41,6 @@ namespace TwitterClone_API
                 options.Password.RequiredLength =3;
             }).AddEntityFrameworkStores<AppDbContext>();
 
-            builder.Services.AddControllers().ConfigureApiBehaviorOptions(options =>
-            {
-                options.SuppressModelStateInvalidFilter = true;
-            });
             builder.Services.AddCors(option =>
             {
                 option.AddPolicy("MyPolicy", policy =>

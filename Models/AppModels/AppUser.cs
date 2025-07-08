@@ -14,10 +14,10 @@ namespace TwitterClone_API.Models.AppModels
         public string? Bio { get; set; }
         public string? Location { get; set; }
         public DateTime CreatedAt { get; set; }
-        public List<Comment>? Comments { get; set; }
-        public List<Tweet>? Tweets { get; set; }
-        public List<LikedTweet>? UserLikes { get; set; }
-        public List<Follow> Followers { get; set; }
-        public List<Follow> Followings { get; set; }
+        public virtual List<Comment>? Comments { get; set; }
+        public virtual List<Tweet>? Tweets { get; set; }
+        public virtual List<LikedTweet>? UserLikes { get; set; }
+        public virtual List<Follow> Followers { get; set; }
+        public virtual List<Follow> Followings { get; set; }
     }
 }

@@ -11,7 +11,7 @@ namespace TwitterClone_API.Models.AppModels
         [ForeignKey("User")]
         public string UserId { get; set; }
         public virtual AppUser User { get; set; }
-        public List<Comment>? Comments { get; set; }
-        public List<LikedTweet>? Likes { get; set; }
+        public virtual List<Comment>? Comments { get; set; }
+        public virtual List<LikedTweet>? Likes { get; set; }
     }
 }

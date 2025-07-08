@@ -30,7 +30,10 @@ namespace TwitterClone_API.DataAccess.Repo
         {
             return dbSet.Find(id)!;
         }
-
+        public T GetById(int id)
+        {
+            return dbSet.Find(id)!;
+        }
         public void Save()
         {
             context.SaveChanges();

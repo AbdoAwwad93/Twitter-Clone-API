@@ -58,7 +58,7 @@ namespace TwitterClone_API.Controllers
                 response.SetResponse(false, "You cannot search your own profile");
                 return BadRequest(response);
             }
-            var profileDto = mapper.Map<ProfileDTO>(SearchUser);
+            var profileDto = mapper.Map<SearchProfileDTO>(SearchUser);
             response.SetResponse(true, profileDto);
             return Ok(response);
         }

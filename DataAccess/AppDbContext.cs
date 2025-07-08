@@ -37,9 +37,6 @@ namespace TwitterClone_API.DataAccess
 
             modelBuilder.Entity<Tweet>().HasMany(tweet => tweet.Likes)
                 .WithOne(likedTweet => likedTweet.Tweet);
-
-
-
         }
 
     }

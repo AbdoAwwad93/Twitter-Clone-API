@@ -90,9 +90,62 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "TwitterClone_API.Controllers.TestController",
-    "Method": "display",
-    "RelativePath": "api/Test",
+    "ContainingType": "TwitterClone_API.Controllers.TweetController",
+    "Method": "AddTweet",
+    "RelativePath": "api/Tweet/AddTweet",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tweetDTO",
+        "Type": "TwitterClone_API.Models.DTOs.AddTweetDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TwitterClone_API.Controllers.TweetController",
+    "Method": "DeleteTweet",
+    "RelativePath": "api/Tweet/DeleteTweet/{tweetId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tweetId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TwitterClone_API.Controllers.TweetController",
+    "Method": "EditTweet",
+    "RelativePath": "api/Tweet/EditTweet/{tweetId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tweetId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "tweetDTO",
+        "Type": "TwitterClone_API.Models.DTOs.AddTweetDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TwitterClone_API.Controllers.TweetController",
+    "Method": "GetAllTweets",
+    "RelativePath": "api/Tweet/GetAllTweets",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

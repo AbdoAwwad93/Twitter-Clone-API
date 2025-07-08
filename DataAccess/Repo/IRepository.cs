@@ -7,6 +7,7 @@
         public void Update(T entity);
         public List<T> GetAll();
         public T GetById(string id);
+        public T GetById(int id);
         public void Save();
     }
 }

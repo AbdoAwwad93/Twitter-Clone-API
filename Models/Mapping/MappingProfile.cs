@@ -9,12 +9,16 @@ namespace TwitterClone_API.Models.Mapping
         public MappingProfile()
         {
             CreateMap<AppUser, ProfileDTO>().ReverseMap();
+            CreateMap<AppUser,SearchProfileDTO>().ReverseMap();
             CreateMap<AppUser, UserRegisterDTO>().ReverseMap();
-            CreateMap<Tweet, TweetDTO>().ForMember(des => des.LikesCount,
-                option => option.MapFrom(src => src.Likes!=null? src.Likes.Count: 0));
-            CreateMap<Tweet, TweetDTO>().ForMember(des => des.CommentsCount,
-                option => option.MapFrom(src => src.Comments!=null ? src.Comments.Count : 0));
-
+            CreateMap<Tweet, TweetDTO>()
+                .ForMember(des => des.LikesCount, option => option.MapFrom(src => src.Likes != null ? src.Likes.Count : 0))
+                .ReverseMap();
+            CreateMap<Tweet, TweetDTO>()
+                .ForMember(des => des.CommentsCount, option => option.MapFrom(src => src.Comments != null ? src.Comments.Count : 0))
+                .ReverseMap();
+            CreateMap<AddTweetDTO, Tweet>()
+                .ForMember(des => des.CreatedAt, option => option.MapFrom(src => DateTime.Now)).ReverseMap();
         }
     }
 }
