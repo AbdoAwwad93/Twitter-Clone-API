@@ -374,10 +374,6 @@ appsettings.json     // Configuration (connection strings, JWT, etc.)
 
 - Comments and likes on tweets
 - Following/unfollowing users
-- User feed and notifications
-- More robust error handling and validation
-- Unit and integration tests
-
 ---
 
 ## License
