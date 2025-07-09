@@ -32,6 +32,95 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "TwitterClone_API.Controllers.CommentController",
+    "Method": "AddComment",
+    "RelativePath": "api/Comment/AddComment/{tweetId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tweetId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "commentDTO",
+        "Type": "TwitterClone_API.Models.DTOs.AddCommentDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TwitterClone_API.Controllers.CommentController",
+    "Method": "DeleteComment",
+    "RelativePath": "api/Comment/DeleteComment/{commentId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "commentId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TwitterClone_API.Controllers.CommentController",
+    "Method": "EditComment",
+    "RelativePath": "api/Comment/EditComment/{coomentId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "commentId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "commentDTO",
+        "Type": "TwitterClone_API.Models.DTOs.AddCommentDTO",
+        "IsRequired": true
+      },
+      {
+        "Name": "coomentId",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TwitterClone_API.Controllers.CommentController",
+    "Method": "GetCommentsByTweetId",
+    "RelativePath": "api/Comment/GetCommentsByTweetId/{tweetId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tweetId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TwitterClone_API.Controllers.CommentController",
+    "Method": "MyReplies",
+    "RelativePath": "api/Comment/MyReplies",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "TwitterClone_API.Controllers.ProfileController",
     "Method": "DeleteMyProfile",
     "RelativePath": "api/Profile/DeleteMyProfile",
@@ -150,6 +239,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TwitterClone_API.Controllers.TweetController",
+    "Method": "GetTweetById",
+    "RelativePath": "api/Tweet/GetTweet{tweetId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tweetId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]

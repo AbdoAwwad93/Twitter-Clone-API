@@ -6,8 +6,7 @@ namespace TwitterClone_API.Models.AppModels
     public class Comment
     {
         public int Id { get; set; }
-        [Required]
-        public string CommnetText { get; set; }
+        public string CommentText { get; set; }
         public DateTime CreatedAt { get; set; }
         [ForeignKey("User")]
         public string UserId { get; set; }

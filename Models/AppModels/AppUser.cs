@@ -6,7 +6,6 @@ namespace TwitterClone_API.Models.AppModels
 {
     public class AppUser : IdentityUser
     {
-        [Required]
         public string FirstName { get; set; }
         public string? LastName { get; set; }
         public string ProfilePictureUrl { get; set; }

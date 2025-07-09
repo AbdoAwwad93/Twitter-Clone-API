@@ -2,6 +2,7 @@
 {
     public class TweetDTO
     {
+        public string UserName { get; set; }
         public string TweetText { get; set; }
         public DateTime CreatedAt { get; set; }
         public int LikesCount { get; set; }

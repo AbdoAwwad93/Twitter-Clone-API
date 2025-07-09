@@ -49,7 +49,7 @@ namespace TwitterClone_API.Controllers
             tweetRepo.Add(newTweet);
             tweetRepo.Save();
             response.SetResponse(true, "Tweet added successfully");
-            return Ok(new { response ,newTweet.Id}); //for testing
+            return Ok(new { response, newTweet.Id }); //for testing
         }
         [HttpDelete("DeleteTweet/{tweetId}")]
         public async Task<IActionResult> DeleteTweet(int tweetId)
@@ -112,8 +112,30 @@ namespace TwitterClone_API.Controllers
                 response.SetResponse(false, "Unauthorized");
                 return Unauthorized(response);
             }
-            var timeLine = user.Followings.Select(f=>f.FollowedUser.Tweets).ToList();
+            var tweets = user.Followings.Select(f => f.FollowedUser.Tweets).ToList();
+            var timeLine = mapper.Map<List<Tweet>>(tweets);
             return Ok(timeLine);
+        }
+        [HttpGet("GetTweet{tweetId}")]
+        public async Task<IActionResult> GetTweetById(int tweetId)
+        {
+            var response = new GeneralResponse();
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)!.Value;
+            var user = await userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                response.SetResponse(false, "Unauthorized");
+                return Unauthorized(response);
+            }
+            var tweet = tweetRepo.GetById(tweetId);
+            if (tweet == null)
+            {
+                response.SetResponse(false, "Tweet not found");
+                return NotFound(response);
+            }
+            var tweetDto = mapper.Map<TweetDTO>(tweet);
+            response.SetResponse(true, tweetDto);
+            return Ok(response);
         }
     }
 }

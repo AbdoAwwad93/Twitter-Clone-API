@@ -11,6 +11,7 @@ namespace TwitterClone_API.DataAccess
         public DbSet<Comment> Comments { get; set; }
         public DbSet<LikedTweet> LikedTweets { get; set; }
         public DbSet<Follow> Follows { get; set; }
+        public DbSet<LikedComment> LikedComments { get; set; }
         public AppDbContext(DbContextOptions<AppDbContext> options)
             :base(options)
         {
