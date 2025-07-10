@@ -53,7 +53,7 @@ namespace TwitterClone_API.Controllers
             return Ok(new { response, comment.Id }); //for testing
         }
 
-        [HttpPost("EditComment/{coomentId}")]
+        [HttpPost("EditComment/{commentId}")]
         public async Task<IActionResult> EditComment(int commentId, AddCommentDTO commentDTO)
         {
             var response = new GeneralResponse();

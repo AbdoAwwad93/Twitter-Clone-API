@@ -180,8 +180,8 @@ namespace TwitterClone_API.Controllers
         public async Task<IActionResult> MutualFollowrs(string userName)
         {
             var response = new GeneralResponse();
-            var userId = User.FindFirst(ClaimTypes.Name)!.Value;
-            var user = await userManager.FindByNameAsync(userId);
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)!.Value;
+            var user = await userManager.FindByIdAsync(userId);
             if (user == null)
             {
                 response.SetResponse(false, "Unauthorized");
