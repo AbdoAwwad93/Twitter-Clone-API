@@ -4,6 +4,12 @@ A RESTful API for a Twitter-like social platform, built with ASP.NET Core 9, Ent
 
 ---
 
+## Updates
+
+- **2024-07-09:** Introduced the Unit of Work pattern for improved data access and transaction management across repositories.
+
+---
+
 ## Table of Contents
 
 - [Features](#features)
@@ -28,6 +34,7 @@ A RESTful API for a Twitter-like social platform, built with ASP.NET Core 9, Ent
 - Entity Framework Core with SQL Server
 - AutoMapper for DTO mapping
 - Swagger/OpenAPI documentation
+- **Unit of Work pattern for robust and maintainable data access**
 
 ---
 
@@ -38,6 +45,35 @@ A RESTful API for a Twitter-like social platform, built with ASP.NET Core 9, Ent
 - **AutoMapper** (object mapping)
 - **Microsoft.AspNetCore.Identity** (user management)
 - **JWT Bearer Authentication**
+---
+
+## Unit of Work Pattern
+
+The project uses the **Unit of Work** pattern to manage data access and transactions across multiple repositories. This design ensures that all related changes to the database are coordinated and committed as a single unit, improving consistency and maintainability.
+
+### How it works
+- The `UnitOfWork` class aggregates all repositories (e.g., Tweets, Comments, Follows) and exposes them via properties.
+- All data operations (add, update, delete) are performed through the Unit of Work, and changes are saved with a single `Save()` call.
+- This approach ensures that either all changes succeed, or none are applied, reducing the risk of data inconsistencies.
+
+### Example Usage
+In controllers (e.g., `TweetController`, `CommentController`), the `IUnitOfWork` is injected and used as follows:
+
+```csharp
+// Adding a new tweet
+unitOfWork.Tweets.Add(newTweet);
+unitOfWork.Save();
+
+// Editing a comment
+unitOfWork.Comments.Update(comment);
+unitOfWork.Save();
+```
+
+### Benefits
+- Centralizes transaction management
+- Simplifies testing and maintenance
+- Promotes separation of concerns
+
 ---
 
 ## Getting Started
