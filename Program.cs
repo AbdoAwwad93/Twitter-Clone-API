@@ -119,7 +119,7 @@ namespace TwitterClone_API
                 app.UseSwaggerUI();
 
             }
-            //app.UseCors("MyPolicy");
+            app.UseCors("MyPolicy");
             app.UseAuthentication();
             app.UseAuthorization();
 

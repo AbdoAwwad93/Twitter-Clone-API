@@ -27,7 +27,7 @@ namespace TwitterClone_API.Controllers
             this.userManager=userManager;
             this.mapper=mapper;
         }
-        [HttpPost("Follow/{userName}")]
+        [HttpPost("followUser/{userName}")]
         public async Task<IActionResult> Follow(string userName)
         {
             var response = new GeneralResponse();

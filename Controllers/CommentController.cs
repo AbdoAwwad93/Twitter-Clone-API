@@ -130,8 +130,9 @@ namespace TwitterClone_API.Controllers
             response.SetResponse(true, commentDTOs);
             return Ok(response);
         }
-        [HttpGet("MyReplies")]
-        public async Task<IActionResult> MyReplies()
+       
+        [HttpPost("Like/{commentId}")]
+        public async Task<IActionResult> Like(int commentId)
         {
             var response = new GeneralResponse();
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)!.Value;
@@ -141,9 +142,55 @@ namespace TwitterClone_API.Controllers
                 response.SetResponse(false, "Unauthorized");
                 return Unauthorized(response);
             }
-            var comments = user.Comments?.ToList() ?? new List<Comment>();
-            var commentDTOs = mapper.Map<List<CommentDTO>>(comments);
-            response.SetResponse(true, commentDTOs);
+            var comment = unitOfWork.Comments.GetById(commentId);
+            if (comment == null)
+            {
+                response.SetResponse(false, "Comment not found");
+                return NotFound(response);
+            }
+            if (comment.Likes.Any(l => l.UserId == user.Id))
+            {
+                response.SetResponse(false, "You already liked this comment");
+                return BadRequest(response);
+            }
+            var like = new LikedComment
+            {
+                UserId = userId,
+                CommentId= commentId
+            };
+            comment.Likes.Add(like);
+            unitOfWork.LikedComments.Add(like);
+            unitOfWork.Save();
+            response.SetResponse(true, "Comment liked successfully");
+            return Ok(response);
+        }
+        [HttpPost("Unlike/{commentId}")]
+        public async Task<IActionResult> Unlike(int commentId)
+        {
+            var response = new GeneralResponse();
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)!.Value;
+            var user = await userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                response.SetResponse(false, "Unauthorized");
+                return Unauthorized(response);
+            }
+            var comment = unitOfWork.Comments.GetById(commentId);
+            if (comment == null)
+            {
+                response.SetResponse(false, "Comment not found");
+                return NotFound(response);
+            }
+            var like = comment.Likes.FirstOrDefault(l => l.UserId == user.Id);
+            if (like == null)
+            {
+                response.SetResponse(false, "You have not liked this comment");
+                return BadRequest(response);
+            }
+            comment.Likes.Remove(like);
+            unitOfWork.LikedComments.delete(like);
+            unitOfWork.Save();
+            response.SetResponse(true, "Comment unliked successfully");
             return Ok(response);
         }
     }

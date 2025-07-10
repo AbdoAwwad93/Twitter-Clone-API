@@ -1,0 +1,181 @@
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\appsettings.Development.json
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\appsettings.json
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\TwitterClone API.staticwebassets.endpoints.json
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\TwitterClone API.exe
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\TwitterClone API.deps.json
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\TwitterClone API.runtimeconfig.json
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\TwitterClone API.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\TwitterClone API.pdb
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\AutoMapper.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Azure.Core.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Azure.Identity.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Castle.Core.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Humanizer.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.AspNetCore.OpenApi.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.Bcl.AsyncInterfaces.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.Build.Locator.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.CodeAnalysis.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.CodeAnalysis.CSharp.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.CodeAnalysis.CSharp.Workspaces.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.CodeAnalysis.Workspaces.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.CodeAnalysis.Workspaces.MSBuild.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.Data.SqlClient.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.EntityFrameworkCore.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.EntityFrameworkCore.Design.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.EntityFrameworkCore.Proxies.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.EntityFrameworkCore.Relational.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.Extensions.Caching.Abstractions.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.Extensions.Caching.Memory.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.Extensions.Configuration.Abstractions.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.Extensions.DependencyInjection.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.Extensions.DependencyModel.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.Extensions.Identity.Core.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.Extensions.Identity.Stores.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.Extensions.Logging.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.Extensions.Logging.Abstractions.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.Extensions.Options.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.Extensions.PlatformAbstractions.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.Extensions.Primitives.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.Identity.Client.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.Identity.Client.Extensions.Msal.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.IdentityModel.Abstractions.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.IdentityModel.Logging.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.IdentityModel.Protocols.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.IdentityModel.Tokens.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.OpenApi.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.SqlServer.Server.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Microsoft.Win32.SystemEvents.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Mono.TextTemplating.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Swashbuckle.SwaggerUi.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\System.ClientModel.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\System.CodeDom.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\System.Composition.AttributedModel.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\System.Composition.Convention.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\System.Composition.Hosting.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\System.Composition.Runtime.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\System.Composition.TypedParts.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\System.Configuration.ConfigurationManager.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\System.Drawing.Common.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\System.Formats.Asn1.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\System.IdentityModel.Tokens.Jwt.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\System.Memory.Data.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\System.Runtime.Caching.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\System.Security.Cryptography.ProtectedData.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\System.Security.Permissions.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\System.Text.Json.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\System.Windows.Extensions.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\de\Microsoft.CodeAnalysis.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\es\Microsoft.CodeAnalysis.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\fr\Microsoft.CodeAnalysis.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\it\Microsoft.CodeAnalysis.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\ja\Microsoft.CodeAnalysis.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\ko\Microsoft.CodeAnalysis.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\pl\Microsoft.CodeAnalysis.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\pt-BR\Microsoft.CodeAnalysis.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\ru\Microsoft.CodeAnalysis.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\tr\Microsoft.CodeAnalysis.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\zh-Hans\Microsoft.CodeAnalysis.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\zh-Hant\Microsoft.CodeAnalysis.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\cs\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\de\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\es\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\fr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\it\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\ja\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\ko\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\pl\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\ru\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\tr\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\cs\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\de\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\es\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\fr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\it\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\ja\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\ko\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\pl\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\pt-BR\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\ru\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\tr\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\de\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\es\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\it\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\cs\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\de\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\es\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\fr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\it\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\ja\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\ko\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\pl\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\pt-BR\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\ru\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+E:\projects\TwitterClone API\TwitterClone API\bin\Release\net9.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+E:\projects\TwitterClone API\TwitterClone API\obj\Release\net9.0\TwitterClone API.csproj.AssemblyReference.cache
+E:\projects\TwitterClone API\TwitterClone API\obj\Release\net9.0\TwitterClone API.GeneratedMSBuildEditorConfig.editorconfig
+E:\projects\TwitterClone API\TwitterClone API\obj\Release\net9.0\TwitterClone API.AssemblyInfoInputs.cache
+E:\projects\TwitterClone API\TwitterClone API\obj\Release\net9.0\TwitterClone API.AssemblyInfo.cs
+E:\projects\TwitterClone API\TwitterClone API\obj\Release\net9.0\TwitterClone API.csproj.CoreCompileInputs.cache
+E:\projects\TwitterClone API\TwitterClone API\obj\Release\net9.0\TwitterClone API.MvcApplicationPartsAssemblyInfo.cs
+E:\projects\TwitterClone API\TwitterClone API\obj\Release\net9.0\TwitterClone API.MvcApplicationPartsAssemblyInfo.cache
+E:\projects\TwitterClone API\TwitterClone API\obj\Release\net9.0\TwitterClone API.sourcelink.json
+E:\projects\TwitterClone API\TwitterClone API\obj\Release\net9.0\scopedcss\bundle\TwitterClone API.styles.css
+E:\projects\TwitterClone API\TwitterClone API\obj\Release\net9.0\staticwebassets.build.json
+E:\projects\TwitterClone API\TwitterClone API\obj\Release\net9.0\staticwebassets.development.json
+E:\projects\TwitterClone API\TwitterClone API\obj\Release\net9.0\staticwebassets.build.endpoints.json
+E:\projects\TwitterClone API\TwitterClone API\obj\Release\net9.0\staticwebassets\msbuild.TwitterClone API.Microsoft.AspNetCore.StaticWebAssets.props
+E:\projects\TwitterClone API\TwitterClone API\obj\Release\net9.0\staticwebassets\msbuild.TwitterClone API.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+E:\projects\TwitterClone API\TwitterClone API\obj\Release\net9.0\staticwebassets\msbuild.build.TwitterClone API.props
+E:\projects\TwitterClone API\TwitterClone API\obj\Release\net9.0\staticwebassets\msbuild.buildMultiTargeting.TwitterClone API.props
+E:\projects\TwitterClone API\TwitterClone API\obj\Release\net9.0\staticwebassets\msbuild.buildTransitive.TwitterClone API.props
+E:\projects\TwitterClone API\TwitterClone API\obj\Release\net9.0\staticwebassets.pack.json
+E:\projects\TwitterClone API\TwitterClone API\obj\Release\net9.0\staticwebassets.upToDateCheck.txt
+E:\projects\TwitterClone API\TwitterClone API\obj\Release\net9.0\TwitterC.FF389812.Up2Date
+E:\projects\TwitterClone API\TwitterClone API\obj\Release\net9.0\TwitterClone API.dll
+E:\projects\TwitterClone API\TwitterClone API\obj\Release\net9.0\refint\TwitterClone API.dll
+E:\projects\TwitterClone API\TwitterClone API\obj\Release\net9.0\TwitterClone API.pdb
+E:\projects\TwitterClone API\TwitterClone API\obj\Release\net9.0\TwitterClone API.genruntimeconfig.cache
+E:\projects\TwitterClone API\TwitterClone API\obj\Release\net9.0\ref\TwitterClone API.dll

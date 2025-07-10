@@ -63,7 +63,7 @@ namespace TwitterClone_API.Controllers
             return Ok(response);
         }
         [HttpPost("EditMyProfile")]
-        public async Task<IActionResult> EditMyProfile(ProfileDTO profileDTO)
+        public async Task<IActionResult> EditMyProfile(EditProfileDTO profileDTO)
         {
             var response = new GeneralResponse();
             if (!ModelState.IsValid)
@@ -117,6 +117,48 @@ namespace TwitterClone_API.Controllers
             }
             response.SetResponse(false, "Invalid Email OR Password");
             return BadRequest(response);
+        }
+        [HttpGet("MyLikes")]
+        public async Task<IActionResult> GetMyLikes()
+        {
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)!.Value;
+            var user = await userManager.FindByIdAsync(userId);
+            var response = new GeneralResponse();
+            if (user == null)
+            {
+                response.SetResponse(false, "Unauthorized");
+                return Unauthorized(response);
+            }
+            var likes = user.UserLikes;
+            if (likes == null || !likes.Any())
+            {
+                response.SetResponse(false, "No likes found");
+                return Ok(response);
+            }
+            var likesDto = mapper.Map<List<TweetDTO>>(likes);
+            response.SetResponse(true, likesDto);
+            return Ok(response);
+        }
+        [HttpGet("MyReplies")]
+        public async Task<IActionResult> MyReplies()
+        {
+            var response = new GeneralResponse();
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)!.Value;
+            var user = await userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                response.SetResponse(false, "Unauthorized");
+                return Unauthorized(response);
+            }
+            var comments = user.Comments?.ToList()?? new List<Comment>();
+            if (!comments.Any())
+            {
+                response.SetResponse(true,"Not Replies");
+                return Ok(response);
+            }
+            var commentDTOs = mapper.Map<List<CommentDTO>>(comments);
+            response.SetResponse(true, commentDTOs);
+            return Ok(response);
         }
     }
 }

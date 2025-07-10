@@ -112,19 +112,41 @@
   },
   {
     "ContainingType": "TwitterClone_API.Controllers.CommentController",
-    "Method": "MyReplies",
-    "RelativePath": "api/Comment/MyReplies",
-    "HttpMethod": "GET",
+    "Method": "Like",
+    "RelativePath": "api/Comment/Like/{commentId}",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
-    "Parameters": [],
+    "Parameters": [
+      {
+        "Name": "commentId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TwitterClone_API.Controllers.CommentController",
+    "Method": "Unlike",
+    "RelativePath": "api/Comment/Unlike/{commentId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "commentId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {
     "ContainingType": "TwitterClone_API.Controllers.FollowController",
-    "Method": "Follow",
-    "RelativePath": "api/Follow/Follow/{userName}",
-    "HttpMethod": "POST",
+    "Method": "FollowCount",
+    "RelativePath": "api/Follow/FollowCount/{userName}",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -138,9 +160,9 @@
   },
   {
     "ContainingType": "TwitterClone_API.Controllers.FollowController",
-    "Method": "FollowCount",
-    "RelativePath": "api/Follow/FollowCount/{userName}",
-    "HttpMethod": "GET",
+    "Method": "Follow",
+    "RelativePath": "api/Follow/followUser/{userName}",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -242,7 +264,7 @@
     "Parameters": [
       {
         "Name": "profileDTO",
-        "Type": "TwitterClone_API.Models.DTOs.ProfileDTO",
+        "Type": "TwitterClone_API.Models.DTOs.EditProfileDTO",
         "IsRequired": true
       }
     ],
@@ -250,8 +272,28 @@
   },
   {
     "ContainingType": "TwitterClone_API.Controllers.ProfileController",
+    "Method": "GetMyLikes",
+    "RelativePath": "api/Profile/MyLikes",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TwitterClone_API.Controllers.ProfileController",
     "Method": "GetProfile",
     "RelativePath": "api/Profile/MyProfile",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TwitterClone_API.Controllers.ProfileController",
+    "Method": "MyReplies",
+    "RelativePath": "api/Profile/MyReplies",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -342,6 +384,43 @@
     "Method": "GetTweetById",
     "RelativePath": "api/Tweet/GetTweet{tweetId}",
     "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tweetId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TwitterClone_API.Controllers.TweetController",
+    "Method": "Like",
+    "RelativePath": "api/Tweet/Like/{tweedId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tweetId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "tweedId",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TwitterClone_API.Controllers.TweetController",
+    "Method": "Unlike",
+    "RelativePath": "api/Tweet/Unlike/{tweetId}",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [

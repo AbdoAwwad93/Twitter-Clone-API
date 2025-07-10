@@ -165,7 +165,6 @@ E:\projects\TwitterClone API\TwitterClone API\obj\Debug\net9.0\staticwebassets\m
 E:\projects\TwitterClone API\TwitterClone API\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.TwitterClone API.props
 E:\projects\TwitterClone API\TwitterClone API\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.TwitterClone API.props
 E:\projects\TwitterClone API\TwitterClone API\obj\Debug\net9.0\staticwebassets.pack.json
-E:\projects\TwitterClone API\TwitterClone API\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 E:\projects\TwitterClone API\TwitterClone API\obj\Debug\net9.0\TwitterC.FF389812.Up2Date
 E:\projects\TwitterClone API\TwitterClone API\obj\Debug\net9.0\TwitterClone API.dll
 E:\projects\TwitterClone API\TwitterClone API\obj\Debug\net9.0\refint\TwitterClone API.dll
@@ -179,3 +178,4 @@ E:\projects\TwitterClone API\TwitterClone API\bin\Debug\net9.0\Swashbuckle.AspNe
 E:\projects\TwitterClone API\TwitterClone API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 E:\projects\TwitterClone API\TwitterClone API\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 E:\projects\TwitterClone API\TwitterClone API\bin\Debug\net9.0\AutoMapper.dll
+E:\projects\TwitterClone API\TwitterClone API\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

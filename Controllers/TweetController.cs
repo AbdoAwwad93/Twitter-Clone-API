@@ -138,5 +138,67 @@ namespace TwitterClone_API.Controllers
             response.SetResponse(true, tweetDto);
             return Ok(response);
         }
+        [HttpPost("Like/{tweedId}")]
+        public async Task<IActionResult> Like(int tweetId)
+        {
+            var response = new GeneralResponse();
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)!.Value;
+            var user = await userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                response.SetResponse(false, "Unauthorized");
+                return Unauthorized(response);
+            }
+            var tweet = unitOfWork.Tweets.GetById(tweetId);
+            if (tweet == null)
+            {
+                response.SetResponse(false, "Tweet not found");
+                return NotFound(response);
+            }
+            if (tweet.Likes.Any(l => l.UserId == userId))
+            {
+                response.SetResponse(false, "You have already liked this tweet");
+                return BadRequest(response);
+            }
+            var like = new LikedTweet
+            {
+                UserId = userId,
+                TweetId = tweetId,
+            };
+            tweet.Likes.Add(like);
+            unitOfWork.LikedTweets.Add(like);
+            unitOfWork.Save();
+            response.SetResponse(true, "Tweet liked successfully");
+            return Ok(response);
+        }
+        [HttpPost("Unlike/{tweetId}")]
+        public async Task<IActionResult> Unlike(int tweetId)
+        {
+            var response = new GeneralResponse();
+            var userId = User.FindFirst(ClaimTypes.NameIdentifier)!.Value;
+            var user = await userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                response.SetResponse(false, "Unauthorized");
+                return Unauthorized(response);
+            }
+            var tweet = unitOfWork.Tweets.GetById(tweetId);
+            if (tweet == null)
+            {
+                response.SetResponse(false, "Tweet not found");
+                return NotFound(response);
+            }
+            var like = tweet.Likes.FirstOrDefault(l => l.UserId == userId);
+            if (like == null)
+            {
+                response.SetResponse(false, "You have not liked this tweet");
+                return BadRequest(response);
+            }
+            tweet.Likes.Remove(like);
+            unitOfWork.LikedTweets.delete(like);
+            unitOfWork.Save();
+            response.SetResponse(true, "Tweet unliked successfully");
+            return Ok(response);
+        }
     }
 }
