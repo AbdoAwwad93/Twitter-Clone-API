@@ -1,406 +1,259 @@
-# TwitterClone API
+# Twitter Clone API
 
-A RESTful API for a Twitter-like social platform, built with ASP.NET Core 9, Entity Framework Core, and JWT authentication. This project is currently in progress. The following features and endpoints are already implemented.
+A comprehensive REST API built with ASP.NET Core that replicates core Twitter functionality including user authentication, tweeting, following, commenting, and social interactions.
 
----
-
-## Updates
-
-- **2024-07-09:** Introduced the Unit of Work pattern for improved data access and transaction management across repositories.
-
----
-
-## Table of Contents
+## 📋 Table of Contents
 
 - [Features](#features)
 - [Technologies Used](#technologies-used)
-- [Getting Started](#getting-started)
-- [API Endpoints](#api-endpoints)
-  - [Authentication](#authentication)
-  - [Profile](#profile)
-  - [Tweets](#tweets)
-- [Project Structure](#project-structure)
+- [Architecture](#architecture)
+- [Installation](#installation)
 - [Configuration](#configuration)
-- [Planned Features](#planned-features)
+- [API Endpoints](#api-endpoints)
+- [Authentication](#authentication)
+- [Database Schema](#database-schema)
+- [Contributing](#contributing)
 - [License](#license)
 
----
+## ✨ Features
 
-## Features
+### Core Functionality
+- **User Authentication & Authorization** - JWT-based secure authentication
+- **Profile Management** - Complete user profile CRUD operations
+- **Tweet Operations** - Create, read, update, and delete tweets
+- **Social Features** - Follow/unfollow users, view followers and followings
+- **Comment System** - Comment on tweets with full CRUD operations
+- **Social Interactions** - Like tweets and comments
+- **Timeline** - View tweets from followed users
 
-- User registration and login with JWT authentication
-- User profile management (view, edit, search)
-- Tweet creation, editing, deletion, and timeline retrieval
-- Entity Framework Core with SQL Server
-- AutoMapper for DTO mapping
-- Swagger/OpenAPI documentation
-- **Unit of Work pattern for robust and maintainable data access**
+### Advanced Features
+- **Mutual Followers** - Discover mutual connections between users
+- **User Search** - Search and view other user profiles
+- **Follow Statistics** - Track follower and following counts
+- **Account Management** - Secure account deletion with password verification
 
----
+## 🛠️ Technologies Used
 
-## Technologies Used
+### Backend Framework
+- **ASP.NET Core 9.0** - , cross-platform web framework
+- **Entity Framework Core** - Object-relational mapping (ORM)
+- **ASP.NET Core Identity** - Authentication and authorization system
 
-- **.NET 9 Web API (ASP.NET Core 9)**
-- **Entity Framework Core 9** (with SQL Server and Proxies)
-- **AutoMapper** (object mapping)
-- **Microsoft.AspNetCore.Identity** (user management)
-- **JWT Bearer Authentication**
----
+### Database
+- **SQL Server** - Primary database management system
+- **Entity Framework Core with Lazy Loading** - Database access layer
 
-## Unit of Work Pattern
+### Authentication & Security
+- **JWT (JSON Web Tokens)** - Stateless authentication
+- **Microsoft.AspNetCore.Authentication.JwtBearer** - JWT authentication middleware
+- **ASP.NET Core Identity** - User management and role-based security
 
-The project uses the **Unit of Work** pattern to manage data access and transactions across multiple repositories. This design ensures that all related changes to the database are coordinated and committed as a single unit, improving consistency and maintainability.
+### Development Tools
+- **AutoMapper** - Object-to-object mapping
+- **Swagger/OpenAPI** - API documentation and testing
+- **Repository Pattern** - Data access abstraction
+- **Unit of Work Pattern** - Transaction management
 
-### How it works
-- The `UnitOfWork` class aggregates all repositories (e.g., Tweets, Comments, Follows) and exposes them via properties.
-- All data operations (add, update, delete) are performed through the Unit of Work, and changes are saved with a single `Save()` call.
-- This approach ensures that either all changes succeed, or none are applied, reducing the risk of data inconsistencies.
+### Additional Libraries
+- **Microsoft.IdentityModel.Tokens** - Token validation
+- **Microsoft.EntityFrameworkCore.Proxies** - Lazy loading support
+- **System.IdentityModel.Tokens.Jwt** - JWT token handling
 
-### Example Usage
-In controllers (e.g., `TweetController`, `CommentController`), the `IUnitOfWork` is injected and used as follows:
+## 🏗️ Architecture
 
-```csharp
-// Adding a new tweet
-unitOfWork.Tweets.Add(newTweet);
-unitOfWork.Save();
+### Design Patterns
+- **Repository Pattern** - Abstracts data access logic
+- **Unit of Work Pattern** - Manages database transactions
+- **Dependency Injection** - Promotes loose coupling and testability
+- **DTO Pattern** - Data transfer objects for API communication
 
-// Editing a comment
-unitOfWork.Comments.Update(comment);
-unitOfWork.Save();
+### Project Structure
+```
+TwitterClone_API/
+├── Controllers/          # API endpoints
+├── DataAccess/          # Data access layer
+│   └── Repo/           # Repository implementations
+├── Models/             # Data models and DTOs
+│   ├── AppModels/      # Entity models
+│   ├── DTOs/           # Data transfer objects
+│   ├── Mapping/        # AutoMapper profiles
+│   └── Response/       # API response models
+└── Program.cs          # Application configuration
 ```
 
-### Benefits
-- Centralizes transaction management
-- Simplifies testing and maintenance
-- Promotes separation of concerns
-
----
-
-## Getting Started
+## 🚀 Installation
 
 ### Prerequisites
+- .NET 9.0 SDK or later
+- SQL Server (LocalDB, Express, or Full)
+- Visual Studio 2022 or VS Code
 
-- [.NET 9 SDK](https://dotnet.microsoft.com/download/dotnet/9.0)
-- SQL Server (local or remote)
+### Setup Steps
 
-### Setup
-
-1. **Clone the repository:**
+1. **Clone the repository**
    ```bash
-   git clone <repo-url>
-   cd TwitterClone-API
+   git clone <repository-url>
+   cd TwitterClone_API
    ```
 
-2. **Configure the database:**
-   - Update the `ConnectionStrings:Constr` in `appsettings.json` with your SQL Server details.
+2. **Restore dependencies**
+   ```bash
+   dotnet restore
+   ```
 
-3. **Apply migrations:**
+3. **Update database connection string**
+   - Open `appsettings.json`
+   - Update the `ConnectionStrings:Constr` value
+
+4. **Configure JWT settings**
+   - Add JWT configuration in `appsettings.json`:
+   ```json
+   {
+     "JWT": {
+       "SecretKey": "your-secret-key-here",
+       "Issuer": "your-issuer-here"
+     }
+   }
+   ```
+
+5. **Run database migrations**
    ```bash
    dotnet ef database update
    ```
 
-4. **Run the API:**
+6. **Run the application**
    ```bash
    dotnet run
    ```
-   The API will be available at `http://localhost:5206`.
 
-5. **Swagger UI:**
-   - Visit `http://localhost:5206/swagger` for interactive API documentation.
+## ⚙️ Configuration
 
----
+### JWT Configuration
+```json
+{
+  "JWT": {
+    "SecretKey": "your-super-secret-key-minimum-32-characters",
+    "Issuer": "TwitterCloneAPI"
+  }
+}
+```
 
-## API Endpoints
+### Database Configuration
+```json
+{
+  "ConnectionStrings": {
+    "Constr": "Server=(localdb)\\MSSQLLocalDB;Database=TwitterCloneDB;Trusted_Connection=true;"
+  }
+}
+```
+
+### CORS Configuration
+The API is configured to allow cross-origin requests from any origin (development only).
+
+## 📚 API Endpoints
 
 ### Authentication
+- `POST /api/Account/register` - Register new user
+- `POST /api/Account/Login` - User login
 
-#### Register
+### Profile Management
+- `GET /api/Profile/MyProfile` - Get current user profile
+- `GET /api/Profile/Search/Profile/{username}` - Search user profile
+- `POST /api/Profile/EditMyProfile` - Update profile
+- `DELETE /api/Profile/DeleteMyProfile` - Delete account
 
-- **Endpoint:** `POST /api/Account/register`
-- **Description:** Registers a new user.
-- **Request Body:**
-  ```json
-  {
-    "firstName": "John",
-    "lastName": "Doe",
-    "userName": "johndoe",
-    "email": "john@example.com",
-    "phoneNumber": "1234567890",
-    "password": "Password123",
-    "confirmPassword": "Password123",
-    "dateOfBirth": "2000-01-01",
-    "profilePictureUrl": "https://example.com/profile.jpg"
-  }
-  ```
-- **Response Example (Success):**
-  ```json
-  {
-    "success": true,
-    "response": "User registered successfully"
-  }
-  ```
-- **Response Example (Failure):**
-  ```json
-  {
-    "success": false,
-    "response": ["User already exists"]
-  }
-  ```
+### Tweet Operations
+- `POST /api/Tweet/AddTweet` - Create new tweet
+- `GET /api/Tweet/GetAllTweets` - Get timeline tweets
+- `GET /api/Tweet/GetTweet{tweetId}` - Get specific tweet
+- `POST /api/Tweet/EditTweet/{tweetId}` - Update tweet
+- `DELETE /api/Tweet/DeleteTweet/{tweetId}` - Delete tweet
 
-#### Login
+### Comment System
+- `POST /api/Comment/AddComment/{tweetId}` - Add comment to tweet
+- `GET /api/Comment/GetCommentsByTweetId/{tweetId}` - Get tweet comments
+- `GET /api/Comment/MyReplies` - Get user's comments
+- `POST /api/Comment/EditComment/{commentId}` - Update comment
+- `DELETE /api/Comment/DeleteComment/{commentId}` - Delete comment
 
-- **Endpoint:** `POST /api/Account/Login`
-- **Description:** Authenticates a user and returns a JWT token.
-- **Request Body:**
-  ```json
-  {
-    "email": "john@example.com",
-    "password": "Password123"
-  }
-  ```
-- **Response Example (Success):**
-  ```json
-  {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
-  }
-  ```
-- **Response Example (Failure):**
-  ```json
-  "Wrong Email Or Password"
-  ```
+### Social Features
+- `POST /api/Follow/Follow/{username}` - Follow user
+- `POST /api/Follow/UnFollow/{username}` - Unfollow user
+- `GET /api/Follow/GetFollowers/{username}` - Get user followers
+- `GET /api/Follow/GetFollowings/{username}` - Get user followings
+- `GET /api/Follow/FollowCount/{username}` - Get follow statistics
+- `GET /api/Follow/getMutualFollowers/{username}` - Get mutual followers
 
----
+## 🔐 Authentication
 
-### Profile
-
-#### Get My Profile
-
-- **Endpoint:** `GET /api/Profile/MyProfile`
-- **Description:** Returns the authenticated user's profile.
-- **Headers:**  
-  `Authorization: Bearer <JWT_TOKEN>`
-- **Response Example:**
-  ```json
-  {
-    "success": true,
-    "response": {
-      "firstName": "John",
-      "lastName": "Doe",
-      "userName": "johndoe",
-      "email": "john@example.com",
-      "phoneNumber": "1234567890",
-      "dateOfBirth": "2000-01-01",
-      "bio": "Hello, I'm John!",
-      "location": "New York",
-      "tweets": [
-        {
-          "tweetText": "This is my first tweet!",
-          "createdAt": "2024-07-07T12:00:00",
-          "likesCount": 5,
-          "commentsCount": 2
-        }
-      ]
-    }
-  }
-  ```
-
-#### Edit My Profile
-
-- **Endpoint:** `POST /api/Profile/EditMyProfile`
-- **Description:** Updates the authenticated user's profile.
-- **Headers:**  
-  `Authorization: Bearer <JWT_TOKEN>`
-- **Request Body:**
-  ```json
-  {
-    "firstName": "John",
-    "lastName": "Doe",
-    "userName": "johndoe",
-    "email": "john@example.com",
-    "phoneNumber": "1234567890",
-    "dateOfBirth": "2000-01-01",
-    "bio": "Updated bio",
-    "location": "San Francisco",
-    "tweets": []
-  }
-  ```
-- **Response Example:**
-  ```json
-  {
-    "success": true,
-    "response": "Profile updated successfully"
-  }
-  ```
-
-#### Search Profile
-
-- **Endpoint:** `GET /api/Profile/Search/Profile/{username}`
-- **Description:** Searches for a user profile by username.
-- **Headers:**  
-  `Authorization: Bearer <JWT_TOKEN>`
-- **Response Example (Found):**
-  ```json
-  {
-    "success": true,
-    "response": {
-      "userName": "janesmith",
-      "dateOfBirth": "1995-05-10",
-      "bio": "Hi, I'm Jane!",
-      "location": "Los Angeles",
-      "tweets": [
-        {
-          "tweetText": "Hello world!",
-          "createdAt": "2024-07-07T13:00:00",
-          "likesCount": 3,
-          "commentsCount": 1
-        }
-      ]
-    }
-  }
-  ```
-- **Response Example (Not Found):**
-  ```json
-  {
-    "success": false,
-    "response": "User not found"
-  }
-  ```
-
----
-
-### Tweets
-
-#### Add Tweet
-
-- **Endpoint:** `POST /api/Tweet/AddTweet`
-- **Description:** Creates a new tweet for the authenticated user.
-- **Headers:**  
-  `Authorization: Bearer <JWT_TOKEN>`
-- **Request Body:**
-  ```json
-  {
-    "tweetText": "This is my first tweet!"
-  }
-  ```
-- **Response Example:**
-  ```json
-  {
-    "response": {
-      "success": true,
-      "response": "Tweet added successfully"
-    },
-    "newTweet": {
-      "id": 1
-    }
-  }
-  ```
-
-#### Edit Tweet
-
-- **Endpoint:** `POST /api/Tweet/EditTweet/{tweetId}`
-- **Description:** Edits an existing tweet (only by the owner).
-- **Headers:**  
-  `Authorization: Bearer <JWT_TOKEN>`
-- **Request Body:**
-  ```json
-  {
-    "tweetText": "Updated tweet text"
-  }
-  ```
-- **Response Example:**
-  ```json
-  {
-    "success": true,
-    "response": "Tweet updated successfully"
-  }
-  ```
-
-#### Delete Tweet
-
-- **Endpoint:** `DELETE /api/Tweet/DeleteTweet/{tweetId}`
-- **Description:** Deletes a tweet (only by the owner).
-- **Headers:**  
-  `Authorization: Bearer <JWT_TOKEN>`
-- **Response Example:**
-  ```json
-  {
-    "success": true,
-    "response": "Tweet deleted successfully"
-  }
-  ```
-
-#### Get Timeline
-
-- **Endpoint:** `GET /api/Tweet/GetAllTweets`
-- **Description:** Returns tweets from users the authenticated user follows.
-- **Headers:**  
-  `Authorization: Bearer <JWT_TOKEN>`
-- **Response Example:**
-  ```json
-  [
-    [
-      {
-        "id": 1,
-        "tweetText": "This is my first tweet!",
-        "createdAt": "2024-07-07T12:00:00",
-        "userId": "user-guid",
-        "user": null,
-        "comments": [],
-        "likes": []
-      }
-    ]
-    // ... more arrays for each followed user
-  ]
-  ```
-
----
-
-## Project Structure
+The API uses JWT (JSON Web Tokens) for authentication. After successful login, include the token in the Authorization header:
 
 ```
-Controllers/         // API controllers
-DataAccess/          // EF Core DbContext, repositories, migrations
-Models/              // Domain models, DTOs, mapping profiles, responses
-Program.cs           // Main entry point, service configuration
-appsettings.json     // Configuration (connection strings, JWT, etc.)
+Authorization: Bearer <your-jwt-token>
 ```
 
+### Token Details
+- **Expiration**: 12 months
+- **Claims**: User ID, Username, and JTI (JWT ID)
+- **Algorithm**: HMAC SHA256
+
+## 🗄️ Database Schema
+
+### Core Entities
+- **AppUser** - Extended Identity user with profile information
+- **Tweet** - User tweets with text content and metadata
+- **Comment** - Comments on tweets
+- **Follow** - User follow relationships
+- **LikedTweet** - Tweet likes tracking
+- **LikedComment** - Comment likes tracking
+
+### Key Relationships
+- User → Tweets (One-to-Many)
+- User → Comments (One-to-Many)
+- Tweet → Comments (One-to-Many)
+- User → Followers/Followings (Many-to-Many through Follow)
+- User → Liked Tweets/Comments (Many-to-Many)
+
+## 🧪 Testing
+
+### Using Swagger UI
+1. Run the application
+2. Navigate to `/swagger` endpoint
+3. Use the "Authorize" button to add JWT token
+4. Test endpoints directly from the interface
+
+### API Testing Tools
+- **Postman** - Comprehensive API testing
+- **curl** - Command-line testing
+- **Swagger UI** - Built-in testing interface
+
+## 📈 Performance Considerations
+
+- **Lazy Loading** - Enabled for navigation properties
+- **Repository Pattern** - Efficient data access
+- **Unit of Work** - Optimized database transactions
+- **DTO Mapping** - Reduced data transfer overhead
+
+## 🔒 Security Features
+
+- **JWT Authentication** - Stateless, secure token-based auth
+- **Password Hashing** - ASP.NET Core Identity handles secure password storage
+- **Authorization Filters** - Endpoint-level security
+- **Input Validation** - Model validation attributes
+- **CORS Configuration** - Cross-origin request handling
+
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 ---
 
-## Configuration
-
-- **Database:**  
-  Set your SQL Server connection string in `appsettings.json` under `ConnectionStrings:Constr`.
-
-- **JWT:**  
-  Set your JWT secret and issuer in `appsettings.json` under the `JWT` section.
-
-  Example:
-  ```json
-  {
-    "ConnectionStrings": {
-      "Constr": "Data Source=.;Initial Catalog=TwitterClone;Integrated Security=SSPI;TrustServerCertificate=true"
-    },
-    "JWT": {
-      "SecretKey": "YourSuperSecretKey",
-      "Issuer": "http://localhost:5206/"
-    }
-  }
-  ```
-
----
-
-## Planned Features
-
-- Comments and likes on tweets
-- Following/unfollowing users
----
-
-## License
-
-This project is for educational purposes and is not production-ready.
-
----
-
-**Note:**  
-This README covers only the features and endpoints that are currently implemented. As development progresses, more features and documentation will be added. 
+**Built with ❤️ using ASP.NET Core**
