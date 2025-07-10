@@ -251,9 +251,3 @@ Authorization: Bearer <your-jwt-token>
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
----
-
-**Built with ❤️ using ASP.NET Core**
