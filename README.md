@@ -12,30 +12,34 @@ A comprehensive REST API built with ASP.NET Core that replicates core Twitter fu
 - [API Endpoints](#api-endpoints)
 - [Authentication](#authentication)
 - [Database Schema](#database-schema)
+- [Response Format](#response-format)
+- [Error Handling](#error-handling)
 - [Contributing](#contributing)
 - [License](#license)
 
 ## ✨ Features
 
 ### Core Functionality
-- **User Authentication & Authorization** - JWT-based secure authentication
-- **Profile Management** - Complete user profile CRUD operations
-- **Tweet Operations** - Create, read, update, and delete tweets
+- **User Authentication & Authorization** - JWT-based secure authentication with 12-month token expiration
+- **Profile Management** - Complete user profile CRUD operations with secure deletion
+- **Tweet Operations** - Create, read, update, and delete tweets with ownership validation
 - **Social Features** - Follow/unfollow users, view followers and followings
-- **Comment System** - Comment on tweets with full CRUD operations
-- **Social Interactions** - Like tweets and comments
-- **Timeline** - View tweets from followed users
+- **Comment System** - Comment on tweets with full CRUD operations and ownership validation
+- **Social Interactions** - Like/unlike tweets and comments with duplicate prevention
+- **Timeline** - View tweets from followed users (personalized feed)
 
 ### Advanced Features
 - **Mutual Followers** - Discover mutual connections between users
-- **User Search** - Search and view other user profiles
+- **User Search** - Search and view other user profiles (excluding own profile)
 - **Follow Statistics** - Track follower and following counts
 - **Account Management** - Secure account deletion with password verification
+- **User Activity Tracking** - View personal likes and replies
+- **Relationship Validation** - Prevent self-following and duplicate relationships
 
 ## 🛠️ Technologies Used
 
 ### Backend Framework
-- **ASP.NET Core 9.0** - , cross-platform web framework
+- **ASP.NET Core** - Modern, cross-platform web framework
 - **Entity Framework Core** - Object-relational mapping (ORM)
 - **ASP.NET Core Identity** - Authentication and authorization system
 
@@ -46,11 +50,10 @@ A comprehensive REST API built with ASP.NET Core that replicates core Twitter fu
 ### Authentication & Security
 - **JWT (JSON Web Tokens)** - Stateless authentication
 - **Microsoft.AspNetCore.Authentication.JwtBearer** - JWT authentication middleware
-- **ASP.NET Core Identity** - User management and role-based security
+- **ASP.NET Core Identity** - User management
 
 ### Development Tools
 - **AutoMapper** - Object-to-object mapping
-- **Swagger/OpenAPI** - API documentation and testing
 - **Repository Pattern** - Data access abstraction
 - **Unit of Work Pattern** - Transaction management
 
@@ -66,13 +69,20 @@ A comprehensive REST API built with ASP.NET Core that replicates core Twitter fu
 - **Unit of Work Pattern** - Manages database transactions
 - **Dependency Injection** - Promotes loose coupling and testability
 - **DTO Pattern** - Data transfer objects for API communication
+- **AutoMapper Integration** - Seamless object mapping
 
 ### Project Structure
 ```
 TwitterClone_API/
 ├── Controllers/          # API endpoints
+│   ├── AccountController.cs      # Authentication & registration
+│   ├── ProfileController.cs      # Profile management
+│   ├── TweetController.cs        # Tweet operations
+│   ├── CommentController.cs      # Comment system
+│   └── FollowController.cs       # Social features
 ├── DataAccess/          # Data access layer
 │   └── Repo/           # Repository implementations
+│       └── UnitOfWork/ # Unit of work pattern
 ├── Models/             # Data models and DTOs
 │   ├── AppModels/      # Entity models
 │   ├── DTOs/           # Data transfer objects
@@ -84,7 +94,7 @@ TwitterClone_API/
 ## 🚀 Installation
 
 ### Prerequisites
-- .NET 9.0 SDK or later
+- .NET 6.0 SDK or later
 - SQL Server (LocalDB, Express, or Full)
 - Visual Studio 2022 or VS Code
 
@@ -110,8 +120,8 @@ TwitterClone_API/
    ```json
    {
      "JWT": {
-       "SecretKey": "your-secret-key-here",
-       "Issuer": "your-issuer-here"
+       "SecretKey": "your-secret-key-here-minimum-32-characters",
+       "Issuer": "TwitterCloneAPI"
      }
    }
    ```
@@ -152,32 +162,37 @@ The API is configured to allow cross-origin requests from any origin (developmen
 
 ## 📚 API Endpoints
 
-### Authentication
+### Authentication (No Auth Required)
 - `POST /api/Account/register` - Register new user
 - `POST /api/Account/Login` - User login
 
-### Profile Management
+### Profile Management (Auth Required)
 - `GET /api/Profile/MyProfile` - Get current user profile
 - `GET /api/Profile/Search/Profile/{username}` - Search user profile
 - `POST /api/Profile/EditMyProfile` - Update profile
-- `DELETE /api/Profile/DeleteMyProfile` - Delete account
+- `DELETE /api/Profile/DeleteMyProfile` - Delete account (requires password confirmation)
+- `GET /api/Profile/MyLikes` - Get current user's liked tweets
+- `GET /api/Profile/MyReplies` - Get current user's comments
 
-### Tweet Operations
+### Tweet Operations (Auth Required)
 - `POST /api/Tweet/AddTweet` - Create new tweet
-- `GET /api/Tweet/GetAllTweets` - Get timeline tweets
-- `GET /api/Tweet/GetTweet{tweetId}` - Get specific tweet
-- `POST /api/Tweet/EditTweet/{tweetId}` - Update tweet
-- `DELETE /api/Tweet/DeleteTweet/{tweetId}` - Delete tweet
+- `GET /api/Tweet/GetAllTweets` - Get timeline tweets from followed users
+- `GET /api/Tweet/GetTweet{tweetId}` - Get specific tweet by ID
+- `POST /api/Tweet/EditTweet/{tweetId}` - Update tweet (owner only)
+- `DELETE /api/Tweet/DeleteTweet/{tweetId}` - Delete tweet (owner only)
+- `POST /api/Tweet/Like/{tweetId}` - Like a tweet
+- `POST /api/Tweet/Unlike/{tweetId}` - Unlike a tweet
 
-### Comment System
+### Comment System (Auth Required)
 - `POST /api/Comment/AddComment/{tweetId}` - Add comment to tweet
 - `GET /api/Comment/GetCommentsByTweetId/{tweetId}` - Get tweet comments
-- `GET /api/Comment/MyReplies` - Get user's comments
-- `POST /api/Comment/EditComment/{commentId}` - Update comment
-- `DELETE /api/Comment/DeleteComment/{commentId}` - Delete comment
+- `POST /api/Comment/EditComment/{commentId}` - Update comment (owner only)
+- `DELETE /api/Comment/DeleteComment/{commentId}` - Delete comment (owner only)
+- `POST /api/Comment/Like/{commentId}` - Like a comment
+- `POST /api/Comment/Unlike/{commentId}` - Unlike a comment
 
-### Social Features
-- `POST /api/Follow/Follow/{username}` - Follow user
+### Social Features (Auth Required)
+- `POST /api/Follow/followUser/{username}` - Follow user
 - `POST /api/Follow/UnFollow/{username}` - Unfollow user
 - `GET /api/Follow/GetFollowers/{username}` - Get user followers
 - `GET /api/Follow/GetFollowings/{username}` - Get user followings
@@ -193,9 +208,16 @@ Authorization: Bearer <your-jwt-token>
 ```
 
 ### Token Details
-- **Expiration**: 12 months
-- **Claims**: User ID, Username, and JTI (JWT ID)
+- **Expiration**: 12 months from creation
+- **Claims**: 
+  - `jti` (JWT ID): Unique identifier for the token
+  - `nameid` (Name Identifier): User ID
+  - `unique_name`: Username
 - **Algorithm**: HMAC SHA256
+- **Issuer**: Configurable via appsettings
+
+### Protected Endpoints
+All endpoints except `/api/Account/register` and `/api/Account/Login` require authentication.
 
 ## 🗄️ Database Schema
 
@@ -214,6 +236,57 @@ Authorization: Bearer <your-jwt-token>
 - User → Followers/Followings (Many-to-Many through Follow)
 - User → Liked Tweets/Comments (Many-to-Many)
 
+## 📋 Response Format
+
+All API responses follow a consistent format using the `GeneralResponse` class:
+
+### Success Response
+```json
+{
+  "isSuccess": true,
+  "data": {
+    // Response data here
+  },
+  "message": "Success message"
+}
+```
+
+### Error Response
+```json
+{
+  "isSuccess": false,
+  "message": "Error message",
+  "errors": ["List of detailed errors"]
+}
+```
+
+### Validation Error Response
+```json
+{
+  "isSuccess": false,
+  "message": "Validation failed",
+  "errors": {
+    "fieldName": ["Field-specific error messages"]
+  }
+}
+```
+
+## 🚨 Error Handling
+
+### HTTP Status Codes
+- `200 OK` - Successful operation
+- `400 Bad Request` - Invalid input or business logic error
+- `401 Unauthorized` - Authentication required or invalid token
+- `404 Not Found` - Resource not found
+- `500 Internal Server Error` - Server error
+
+### Common Error Scenarios
+- **Authentication Errors**: Invalid credentials, expired tokens
+- **Authorization Errors**: Attempting to modify resources owned by others
+- **Validation Errors**: Invalid input data
+- **Business Logic Errors**: Attempting to follow yourself, duplicate likes
+- **Resource Not Found**: Invalid tweet/comment/user IDs
+
 ## 🧪 Testing
 
 ### Using Swagger UI
@@ -226,6 +299,14 @@ Authorization: Bearer <your-jwt-token>
 - **Postman** - Comprehensive API testing
 - **curl** - Command-line testing
 - **Swagger UI** - Built-in testing interface
+
+### Sample Test Flow
+1. Register a new user
+2. Login to get JWT token
+3. Create tweets
+4. Follow other users
+5. Like tweets and comments
+6. View timeline and social features
 
 ## 📈 Performance Considerations
 
@@ -240,14 +321,6 @@ Authorization: Bearer <your-jwt-token>
 - **Password Hashing** - ASP.NET Core Identity handles secure password storage
 - **Authorization Filters** - Endpoint-level security
 - **Input Validation** - Model validation attributes
+- **Ownership Validation** - Users can only modify their own content
 - **CORS Configuration** - Cross-origin request handling
-
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
+- **Secure Account Deletion** - Password verification required
