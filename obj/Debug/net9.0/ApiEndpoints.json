@@ -71,7 +71,7 @@
   {
     "ContainingType": "TwitterClone_API.Controllers.CommentController",
     "Method": "EditComment",
-    "RelativePath": "api/Comment/EditComment/{coomentId}",
+    "RelativePath": "api/Comment/EditComment/{commentId}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -79,16 +79,11 @@
       {
         "Name": "commentId",
         "Type": "System.Int32",
-        "IsRequired": false
+        "IsRequired": true
       },
       {
         "Name": "commentDTO",
         "Type": "TwitterClone_API.Models.DTOs.AddCommentDTO",
-        "IsRequired": true
-      },
-      {
-        "Name": "coomentId",
-        "Type": "",
         "IsRequired": true
       }
     ],

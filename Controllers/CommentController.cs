@@ -25,6 +25,7 @@ namespace TwitterClone_API.Controllers
         public CommentController(UserManager<AppUser> userManager,IUnitOfWork unitOfWork, IMapper mapper)
         {
             this.userManager=userManager;
+            this.unitOfWork=unitOfWork;
             this.mapper=mapper;
         }
         [HttpPost("AddComment/{tweetId}")]

@@ -117,7 +117,7 @@ namespace TwitterClone_API.Controllers
             var timeLine = mapper.Map<List<Tweet>>(tweets);
             return Ok(timeLine);
         }
-        [HttpGet("GetTweet{tweetId}")]
+        [HttpGet("GetTweet/{tweetId}")]
         public async Task<IActionResult> GetTweetById(int tweetId)
         {
             var response = new GeneralResponse();
@@ -138,7 +138,7 @@ namespace TwitterClone_API.Controllers
             response.SetResponse(true, tweetDto);
             return Ok(response);
         }
-        [HttpPost("Like/{tweedId}")]
+        [HttpPost("Like/{tweetId}")]
         public async Task<IActionResult> Like(int tweetId)
         {
             var response = new GeneralResponse();
