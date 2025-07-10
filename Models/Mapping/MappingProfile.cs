@@ -28,6 +28,8 @@ namespace TwitterClone_API.Models.Mapping
                 .ForMember(des => des.LikesCount, option => option.MapFrom(src => src.Tweet.Likes != null ? src.Tweet.Likes.Count : 0));
             CreateMap<Comment, CommentDTO>()
                 .ForMember(des => des.UserName, option => option.MapFrom(src => src.User.UserName)).ReverseMap();
+            CreateMap<AppUser, FollowerDTO>()
+                .ForMember(des => des.Id, option => option.MapFrom(src => src.Id)).ReverseMap();
         }
     }
 }

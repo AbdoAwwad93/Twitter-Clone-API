@@ -121,6 +121,102 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "TwitterClone_API.Controllers.FollowController",
+    "Method": "Follow",
+    "RelativePath": "api/Follow/Follow/{userName}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TwitterClone_API.Controllers.FollowController",
+    "Method": "FollowCount",
+    "RelativePath": "api/Follow/FollowCount/{userName}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TwitterClone_API.Controllers.FollowController",
+    "Method": "GetFollowers",
+    "RelativePath": "api/Follow/GetFollowers/{useraName}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "useraName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TwitterClone_API.Controllers.FollowController",
+    "Method": "GetFollowings",
+    "RelativePath": "api/Follow/GetFollowings/{userName}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TwitterClone_API.Controllers.FollowController",
+    "Method": "MutualFollowrs",
+    "RelativePath": "api/Follow/getMutualFollowers/{userName}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TwitterClone_API.Controllers.FollowController",
+    "Method": "UnFollow",
+    "RelativePath": "api/Follow/UnFollow/{userName}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "TwitterClone_API.Controllers.ProfileController",
     "Method": "DeleteMyProfile",
     "RelativePath": "api/Profile/DeleteMyProfile",

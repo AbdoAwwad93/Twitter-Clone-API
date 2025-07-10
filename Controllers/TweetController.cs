@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using TwitterClone_API.DataAccess.Repo;
+using TwitterClone_API.DataAccess.Repo.UnitOfWork;
 using TwitterClone_API.Models.AppModels;
 using TwitterClone_API.Models.DTOs;
 using TwitterClone_API.Models.Response;
@@ -16,13 +17,13 @@ namespace TwitterClone_API.Controllers
     [Authorize]
     public class TweetController : ControllerBase
     {
-        private readonly IRepository<Tweet> tweetRepo;
+        private readonly IUnitOfWork unitOfWork;
         private readonly UserManager<AppUser> userManager;
         private readonly IMapper mapper;
 
-        public TweetController(IRepository<Tweet> tweetRepo, UserManager<AppUser> userManager, IMapper mapper)
+        public TweetController(IUnitOfWork unitOfWork, UserManager<AppUser> userManager, IMapper mapper)
         {
-            this.tweetRepo=tweetRepo;
+            this.unitOfWork=unitOfWork;
             this.userManager=userManager;
             this.mapper=mapper;
         }
@@ -46,8 +47,8 @@ namespace TwitterClone_API.Controllers
             var newTweet = mapper.Map<Tweet>(tweetDTO);
             user.Tweets?.Add(newTweet);
 
-            tweetRepo.Add(newTweet);
-            tweetRepo.Save();
+            unitOfWork.Tweets.Add(newTweet);
+            unitOfWork.Save();
             response.SetResponse(true, "Tweet added successfully");
             return Ok(new { response, newTweet.Id }); //for testing
         }
@@ -57,7 +58,7 @@ namespace TwitterClone_API.Controllers
             var response = new GeneralResponse();
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)!.Value;
             var user = await userManager.FindByIdAsync(userId);
-            var tweet = tweetRepo.GetById(tweetId);
+            var tweet = unitOfWork.Tweets.GetById(tweetId);
             if (tweet == null)
             {
                 response.SetResponse(false, "Tweet not found");
@@ -68,8 +69,8 @@ namespace TwitterClone_API.Controllers
                 response.SetResponse(false, "Unauthorized");
                 return BadRequest(response);
             }
-            tweetRepo.delete(tweet);
-            tweetRepo.Save();
+            unitOfWork.Tweets.delete(tweet);
+            unitOfWork.Save();
             response.SetResponse(true, "Tweet deleted successfully");
             return Ok(response);
         }
@@ -84,7 +85,7 @@ namespace TwitterClone_API.Controllers
             }
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)!.Value;
             var user = await userManager.FindByIdAsync(userId);
-            var tweet = tweetRepo.GetById(tweetId);
+            var tweet = unitOfWork.Tweets.GetById(tweetId);
             if (tweet == null)
             {
                 response.SetResponse(false, "Tweet not found");
@@ -96,8 +97,8 @@ namespace TwitterClone_API.Controllers
                 return BadRequest(response);
             }
             mapper.Map(tweetDTO, tweet);
-            tweetRepo.Update(tweet);
-            tweetRepo.Save();
+            unitOfWork.Tweets.Update(tweet);
+            unitOfWork.Save();
             response.SetResponse(true, "Tweet updated successfully");
             return Ok(response);
         }
@@ -127,7 +128,7 @@ namespace TwitterClone_API.Controllers
                 response.SetResponse(false, "Unauthorized");
                 return Unauthorized(response);
             }
-            var tweet = tweetRepo.GetById(tweetId);
+            var tweet = unitOfWork.Tweets.GetById(tweetId);
             if (tweet == null)
             {
                 response.SetResponse(false, "Tweet not found");

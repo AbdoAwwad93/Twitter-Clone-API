@@ -1,4 +1,6 @@
-﻿namespace TwitterClone_API.DataAccess.Repo
+﻿using System.Linq.Expressions;
+
+namespace TwitterClone_API.DataAccess.Repo
 {
     public interface IRepository<T> where T : class
     {
@@ -8,6 +10,5 @@
         public List<T> GetAll();
         public T GetById(string id);
         public T GetById(int id);
-        public void Save();
     }
 }

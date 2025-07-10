@@ -10,6 +10,7 @@ using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
 using TwitterClone_API.Models.Mapping;
 using TwitterClone_API.Models.AppModels;
+using TwitterClone_API.DataAccess.Repo.UnitOfWork;
 
 namespace TwitterClone_API
 {
@@ -105,7 +106,7 @@ namespace TwitterClone_API
             });
 
             builder.Services.AddAutoMapper(cfg => cfg.AddProfile<MappingProfile>());
-
+            builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 
             var app = builder.Build();

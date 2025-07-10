@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ActionConstraints;
 using System.Security.Claims;
 using TwitterClone_API.DataAccess.Repo;
+using TwitterClone_API.DataAccess.Repo.UnitOfWork;
 using TwitterClone_API.Models.AppModels;
 using TwitterClone_API.Models.DTOs;
 using TwitterClone_API.Models.Response;
@@ -13,19 +15,16 @@ namespace TwitterClone_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class CommentController : ControllerBase
     {
         private readonly UserManager<AppUser> userManager;
-        private readonly IRepository<Tweet> tweetRepo;
-        private readonly IRepository<Comment> commentRepo;
         private readonly IMapper mapper;
+        private readonly IUnitOfWork unitOfWork;
 
-        public CommentController(UserManager<AppUser> userManager, IRepository<Tweet> tweetRepo,
-            IRepository<Comment> commentRepo, IMapper mapper)
+        public CommentController(UserManager<AppUser> userManager,IUnitOfWork unitOfWork, IMapper mapper)
         {
             this.userManager=userManager;
-            this.tweetRepo=tweetRepo;
-            this.commentRepo=commentRepo;
             this.mapper=mapper;
         }
         [HttpPost("AddComment/{tweetId}")]
@@ -39,7 +38,7 @@ namespace TwitterClone_API.Controllers
                 response.SetResponse(false, "Unauthorized");
                 return Unauthorized(response);
             }
-            var tweet = tweetRepo.GetById(tweetId);
+            var tweet = unitOfWork.Tweets.GetById(tweetId);
             if (tweet==null)
             {
                 response.SetResponse(false, "Tweet not found");
@@ -48,8 +47,8 @@ namespace TwitterClone_API.Controllers
             var comment = mapper.Map<Comment>(commentDTO);
             user.Comments.Add(comment);
             tweet.Comments.Add(comment);
-            commentRepo.Add(comment);
-            commentRepo.Save();
+            unitOfWork.Comments.Add(comment);
+            unitOfWork.Save();
             response.SetResponse(true, "Comment added successfully");
             return Ok(new { response, comment.Id }); //for testing
         }
@@ -70,15 +69,15 @@ namespace TwitterClone_API.Controllers
                 response.SetResponse(false, "Unauthorized");
                 return Unauthorized(response);
             }
-            var comment = commentRepo.GetById(commentId);
+            var comment = unitOfWork.Comments.GetById(commentId);
             if (comment==null)
             {
                 response.SetResponse(false, "Comment not found");
                 return NotFound(response);
             }
             mapper.Map(commentDTO, comment);
-            commentRepo.Update(comment);
-            commentRepo.Save();
+            unitOfWork.Comments.Update(comment);
+            unitOfWork.Save();
             response.SetResponse(true, "Comment edited successfully");
             return Ok(response);
         }
@@ -93,7 +92,7 @@ namespace TwitterClone_API.Controllers
                 response.SetResponse(false, "Unauthorized");
                 return Unauthorized(response);
             }
-            var comment = commentRepo.GetById(commentId);
+            var comment = unitOfWork.Comments.GetById(commentId);
             if (comment == null)
             {
                 response.SetResponse(false, "Comment not found");
@@ -104,8 +103,8 @@ namespace TwitterClone_API.Controllers
                 response.SetResponse(false, "Unauthorized");
                 return BadRequest(response);
             }
-            commentRepo.delete(comment);
-            commentRepo.Save();
+            unitOfWork.Comments.delete(comment);
+            unitOfWork.Save();
             response.SetResponse(true, "Comment deleted successfully");
             return Ok(response);
         }
@@ -120,7 +119,7 @@ namespace TwitterClone_API.Controllers
                 response.SetResponse(false, "Unauthorized");
                 return Unauthorized(response);
             }
-            var tweet = tweetRepo.GetById(tweetId);
+            var tweet = unitOfWork.Tweets.GetById(tweetId);
             if (tweet == null)
             {
                 response.SetResponse(false, "Tweet not found");
